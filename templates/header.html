@@ -25,11 +25,11 @@
               <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Category
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% comment %} <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for category in categories %}
                 <a class="dropdown-item" href="{% url 'blog.category_blogs' category.slug %}">{{category.title}}</a>
                 {% endfor %}
-              </div>
+              </div> {% endcomment %}
             </li>
             {% if request.user.is_authenticated %}
             <li class="nav-item dropdown">
