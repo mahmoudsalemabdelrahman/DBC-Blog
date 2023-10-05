@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link text-white" href="{% url 'home' %}">Home
+              <a class="nav-link text-white" href="{% url 'post:home' %}">Home
                
               </a>
             </li> 
@@ -27,7 +27,7 @@
               </a>
               {% comment %} <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for category in categories %}
-                <a class="dropdown-item" href="{% url 'blog.category_blogs' category.slug %}">{{category.title}}</a>
+                <a class="dropdown-item" href="{% url 'post:category_blogs' category.slug %}">{{category.title}}</a>
                 {% endfor %}
               </div> {% endcomment %}
             </li>
