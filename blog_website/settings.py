@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0ebap7n0ozdz48o9)*i9v-i&ss@tvsetv4^(!wuoiton@aaux6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -81,16 +81,24 @@ WSGI_APPLICATION = 'blog_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER':'postgres',
-        'PASSWORD':'QGKtmvXH6SiXhl2Qvkmy',
-        'HOST':'containers-us-west-60.railway.app',
-        'PORT':'6256',
+DATABASE = {
+    'default':{
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':'BASE_DIR / db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER':'postgres',
+#         'PASSWORD':'QGKtmvXH6SiXhl2Qvkmy',
+#         'HOST':'containers-us-west-60.railway.app',
+#         'PORT':'6256',
+#     }
+# }
 
 
 # Password validation
@@ -131,8 +139,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles_build' / 'static'
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_ROOT = BASE_DIR  / 'static'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 MEDIA_URL = '/media/'
@@ -157,21 +165,21 @@ AUTHENTICATION_BACKENDS = (
 
    # HTTPS SETTINGS
 
-SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
 
 
 # HSTS SETTINGS
 
-SECURE_HSTS_SECONDS = 3153600
+# SECURE_HSTS_SECONDS = 3153600
 
-SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_PRELOAD = True
 
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 
 

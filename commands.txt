@@ -1,2 +1,0 @@
-pip3.8 install --user pythonanywhere
-pa_autoconfigure_django.py --python=3.8 github_repository_url
