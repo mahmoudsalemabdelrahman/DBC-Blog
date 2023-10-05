@@ -19,7 +19,7 @@
               </a>
             </li> 
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'blogs' %}">Blogs</a>
+              <a class="nav-link text-white" href="{% url 'post:blogs' %}">Blogs</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,25 +38,25 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
-                <a class="dropdown-item" href="{% url 'user_notifications' %}">
+                <a class="dropdown-item" href="{% url 'user:profile' %}">My Profile</a>
+                <a class="dropdown-item" href="{% url 'user:user_notifications' %}">
                   {% if unseen > 0 %}
                   Notification ({{unseen}})
                   {% else %}
                   Notification
                   {% endif %}
                 </a>
-                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                <a class="dropdown-item" href="{% url 'user:logout' %}">Logout</a>
                
               </div>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
+              <a class="nav-link" href="{% url 'user:login' %}">Login</a>
             </li>
             {% endif %}
           </ul>
-          <form class="form-inline d-flex flex-nowrap my-2 ml-auto search-form" action="{% url 'search_blogs' %}" method="GET">
+          <form class="form-inline d-flex flex-nowrap my-2 ml-auto search-form" action="{% url 'post:search_blogs' %}" method="GET">
             <input class="form-control px-5" name="search" type="text" placeholder="Search blogs" required>
             <button class="btn btn-primary ml-1">Search</button>
           </form>
