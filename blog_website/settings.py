@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'user_profile',
     'notification',
     'ckeditor',
-    'dj_database_url',
+    
 ]
 
 MIDDLEWARE = [
